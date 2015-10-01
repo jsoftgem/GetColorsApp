@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Getcolorsapp by jsoftgem</title>
+    <title>GetColors by jsoftgem</title>
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/github-dark.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -32,7 +32,7 @@
 
     <section>
         <div id="title">
-            <h1>GetColor</h1>
+            <h1>GetColors</h1>
 
             <p>Create a color scheme from an IMAGE file</p>
 
@@ -49,7 +49,8 @@
             </div>
 
             <fieldset>
-                <legend>Palette from image (Click to add HEX value)</legend>
+                <legend>Palette from image </legend>
+                <h6>(click to add)</h6>
                 <div ng-repeat="hex in hexes">
                     <div ng-if="!removeAdded(hex)"
                          style="height: 50px;width:50px;border-radius: 4px;background:{{hex}};float:left;cursor: pointer"
@@ -66,6 +67,8 @@
                 </div>
             </fieldset>
             <fieldset ng-if="chromaSamples && chromaSamples.length > 0">
+                <h6>(click to remove)</h6>
+
                 <div ng-repeat="chroma in chromaSamples" ng-click="remove(chroma)"
                      style="height: 50px;width:50px;border-radius: 4px;background:{{chroma}};float:left;;cursor: pointer"></div>
 
