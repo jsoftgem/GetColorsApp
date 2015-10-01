@@ -5,4 +5,4 @@ Create a color scheme using an IMAGE file
 ![alt tag](http://jsoftgem.github.io/GetColorsApp/img/sch1.png)
 
 #Let's start!
-[link](http://jsoftgem.github.io/GetColorsApp/)
+[Click me](http://jsoftgem.github.io/GetColorsApp/)
