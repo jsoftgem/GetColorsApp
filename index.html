@@ -1,0 +1,64 @@
+<html ng-app="getColorApp">
+<body ng-controller="getColorCtrl">
+<div style="padding: 15px 0; margin: auto">
+    <button title="button" ngf-select="selectFile($file)" ngf-pattern="&apos;image/*&apos;" ngf-no-object-url="true"
+            accept="image/*" ngf-max-size="20MB">Browse photo
+    </button>
+    <div>
+
+        <img ng-if="imageData" ng-src="{{imageData}}" width="300" height="300">
+    </div>
+</div>
+<fieldset>
+    <legend>Palette from sample</legend>
+    <div ng-repeat="hex in hexes">
+        <div ng-if="!removeAdded(hex)"
+             style="height: 50px;width:50px;border-radius: 4px;background:{{hex}};float:left;cursor: pointer"
+             ng-click="includeForChroma(hex)"></div>
+    </div>
+</fieldset>
+<h1>Palette Selected</h1>
+<fieldset>
+    <legend>JSON Array</legend>
+    <div>
+        <p style="word-break: break-all" ng-if="chromaSamples && chromaSamples.length > 0">
+            {{chromaSamplesString}}
+        </p>
+    </div>
+</fieldset>
+<fieldset ng-if="chromaSamples && chromaSamples.length > 0">
+    <div ng-repeat="chroma in chromaSamples" ng-click="remove(chroma)"
+         style="height: 50px;width:50px;border-radius: 4px;background:{{chroma}};float:left;;cursor: pointer"></div>
+
+</fieldset>
+
+
+<h1>Chroma Generated</h1>
+
+<fieldset>
+    <legend>JSON Array</legend>
+    <div>
+        <p style="word-break: break-all" ng-if="chromaColors && chromaColors.length > 0">
+            {{chromaColorsString}}
+        </p>
+    </div>
+</fieldset>
+
+
+<fieldset ng-if="chromaColors && chromaColors.length > 0">
+    <div ng-repeat="chroma in chromaColors"
+         style="height: 50px;width:50px;border-radius: 4px;background:{{chroma}};float:left;;cursor: pointer"></div>
+</fieldset>
+</body>
+<script src="lib/vendor/jquery/dist/jquery.min.js"></script>
+<script src="lib/vendor/angular/angular.js"></script>
+<script src="lib/vendor/ng-file-upload/ng-file-upload.min.js"></script>
+<script src="lib/vendor/ng-file-upload/FileAPI.min.js"></script>
+<script src="lib/vendor/chroma/chroma.min.js"></script>
+<script src="lib/vendor/color-thief/color-thief.min.js"></script>
+<script src="js/app.js"></script>
+<script>
+
+</script>
+</body>
+</html>
